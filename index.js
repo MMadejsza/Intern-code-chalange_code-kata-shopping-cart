@@ -82,6 +82,7 @@ class UserCart {
 					break;
 			}
 		}
+		this.calculateValuesOfEachItem();
 	}
 }
 
