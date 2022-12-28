@@ -28,11 +28,11 @@ class UserCart {
 			}</h2>`;
 		}
 		console.log(this.cartValue);
-		const container = document.querySelector('.cartContainer');
+		const container = document.querySelector('.place');
 		container.innerHTML = '';
 		const div = document.createElement('div');
 		div.setAttribute('class', 'cart');
-		div.innerHTML += `
+		div.innerHTML = `
         <h1> Total cart value: <span class="totalCartValue">${this.cartValue}</span></h1>
         ${displayItemSummary(A)}
         ${displayItemSummary(B)}
