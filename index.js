@@ -17,6 +17,29 @@ class UserCart {
 		this.cartValue;
 	}
 
+	calculateValuesOfEachItem() {
+		const itemsValues = this.cartContent.map((item) => {
+			if (!item.discountAmount) {
+				//- if the item is NOT discounted
+				return item.price * item.amount;
+			} else {
+				//- if the item is discounted
+				if (item.amount / item.discountAmount >= 1) {
+					//- if reminder is greater/equal to 1 (if there is more then "promotional amount of items")
+					return (
+						item.discountedPrice * Math.floor(item.amount / item.discountAmount) +
+						(item.amount % item.discountAmount) * item.price
+					);
+				} else {
+					//- if less then bundle offer
+					return item.price * item.amount;
+				}
+			}
+		});
+		console.log(itemsValues);
+		return itemsValues;
+	}
+
 	addItem() {
 		this.cartContent = [];
 
