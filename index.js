@@ -17,18 +17,19 @@ class UserCart {
 		this.cartValue;
 	}
 
+	renderOutcome() {
+		console.log(this.cartValue);
+	}
+
 	calculateTotalCartValue() {
 		this.cartValue = 0;
 		this.calculateValuesOfEachItem().forEach((itemsValue) => {
 			this.cartValue += itemsValue;
 		}, this);
+		this.renderOutcome();
 		// console.log(
 		// 	'🚀 ~ file: index.js:25 ~ UserCart ~ this.calculateValuesOfEachItem ~ calculateValuesOfEachItem()',
 		// 	this.calculateValuesOfEachItem(),
-		// );
-		// console.log(
-		// 	'🚀 ~ file: index.js:22 ~ UserCart ~ calculateTotalCartValue ~ this.cartValue ',
-		// 	this.cartValue,
 		// );
 	}
 
