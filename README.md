@@ -1,6 +1,9 @@
-## Edit: My Workflow
-Unfortunately (or maybe not...) I wasn't sure what the outcome is expected to look like. Should it be just in the console or displayed for the user, where this "checkout" accepts the string etc. etc. That's why I actually treated the entire task just as having fun and another scenario to practice a bit :). Furthermore, I downplayed "spend up to two hours on it" enjoying making up new problems and sorting them out :D - I just like to add a bit more details and make it maybe a bit more "real" and more reusable like component. I'm hoping it will be seen as "advantage" as I actually was able to show more of my skills. 
-Disclaimer: Intentionally I have not checked StackOverflow or any other forums for seeking how your discount should be coded. I wanted just to tackle it by myself to let you judge my way of thinking.
+## Edit: My Workflow 
+
+- [X]  Website: https://mmadejsza.github.io/Intern-code-chalange_code-kata-shopping-cart/
+
++ Unfortunately (or maybe not... :grin:) I wasn't sure what the outcome is expected to look like. Should it be just in the console or displayed for the user, where this "checkout" accepts the string etc. etc. That's why I actually treated the entire task just as having fun and another scenario to practice a bit :slightly_smiling_face:. Furthermore, I downplayed "spend up to two hours on it" enjoying making up new problems and sorting them out :hugs: - I just like to add a bit more details and make it maybe a bit more "real" and more reusable like component. I'm hoping it will be seen as "advantage" as I actually was able to show more of my skills. 
++ :point_up: Disclaimer : Intentionally I have not checked StackOverflow or any other forums for seeking how your discount should be coded. I wanted just to tackle it by myself to let you judge my way of thinking.
 
 
 
