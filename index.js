@@ -19,25 +19,37 @@ class UserCart {
 
 	renderOutcome() {
 		function displayItemSummary(item) {
-			return `<h2>${
+			return `<li class="list-group-item">${
 				item.amount == undefined
 					? ``
 					: `Item ${item.name}: ${item.amount} x ${item.price} = `
 			}${item.amount == undefined ? `` : `${item.totalValue}`}${
 				item.discountAmount != 0 && item.amount >= item.discountAmount ? ' Discounted' : ''
-			}</h2>`;
+			}</li>
+            
+                   
+            `;
 		}
 		console.log(this.cartValue);
-		const container = document.querySelector('.place');
+		const container = document.querySelector('.mycontainer');
 		container.innerHTML = '';
 		const div = document.createElement('div');
 		div.setAttribute('class', 'cart');
 		div.innerHTML = `
-        <h1> Total cart value: <span class="totalCartValue">${this.cartValue}</span></h1>
-        ${displayItemSummary(A)}
-        ${displayItemSummary(B)}
-        ${displayItemSummary(C)}
-        ${displayItemSummary(D)}`;
+          
+        <div class="card mt-5">
+        <img src="https://placeimg.com/150/150/tech" alt="" class="card-img-top" />
+        <div class="card-body">
+            <h4 class="card-title mb-2">Basket:</h4>
+            <ul class="list-group list-group-flush">
+                ${displayItemSummary(A)}
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+        </div>
+        <div class="card-footer text-center fw-bold">&pound${this.cartValue}</div>
+    </div>
+    `;
 		container.appendChild(div);
 	}
 
