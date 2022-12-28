@@ -22,10 +22,14 @@ class UserCart {
 		this.calculateValuesOfEachItem().forEach((itemsValue) => {
 			this.cartValue += itemsValue;
 		}, this);
-		console.log(
-			'🚀 ~ file: index.js:22 ~ UserCart ~ calculateTotalCartValue ~ this.cartValue ',
-			this.cartValue,
-		);
+		// console.log(
+		// 	'🚀 ~ file: index.js:25 ~ UserCart ~ this.calculateValuesOfEachItem ~ calculateValuesOfEachItem()',
+		// 	this.calculateValuesOfEachItem(),
+		// );
+		// console.log(
+		// 	'🚀 ~ file: index.js:22 ~ UserCart ~ calculateTotalCartValue ~ this.cartValue ',
+		// 	this.cartValue,
+		// );
 	}
 
 	calculateValuesOfEachItem() {
@@ -47,7 +51,6 @@ class UserCart {
 				}
 			}
 		});
-		console.log(itemsValues);
 		return itemsValues;
 	}
 
