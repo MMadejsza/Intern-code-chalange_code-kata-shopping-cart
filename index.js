@@ -25,11 +25,10 @@ class UserCart {
 					: `Item ${item.name}: ${item.amount} x ${item.price} = `
 			}${item.amount == undefined ? `` : `${item.totalValue}`}${
 				item.discountAmount != 0 && item.amount >= item.discountAmount
-					? '<span class="badge bg-secondary text-bg-success mx-1">Discount!</span>'
+					? '<span class="badge text-bg-success mx-1">Discount!</span>'
 					: ''
 			}</li>`;
 		}
-		console.log(this.cartValue);
 		const container = document.querySelector('.myContainer');
 		container.innerHTML = '';
 		const div = document.createElement('div');
