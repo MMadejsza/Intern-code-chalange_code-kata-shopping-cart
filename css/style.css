@@ -1,12 +1,10 @@
 .form {
 	width: 40%;
 }
-.card {
-	width: 60%;
-}
+
 .card-footer {
 	color: green;
 }
-.place {
-	width: 60%;
+.myContainer {
+	width: 28%;
 }
