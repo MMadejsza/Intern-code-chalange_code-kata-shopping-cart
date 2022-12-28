@@ -32,8 +32,9 @@ class UserCart {
 		container.innerHTML = '';
 		const div = document.createElement('div');
 		div.setAttribute('class', 'cart');
-		div.innerHTML = `<h1> Total cart value: <span class="totalCartValue">${this.cartValue}</span></h1>`;
-		div.innerHTML = `${displayItemSummary(A)}
+		div.innerHTML += `
+        <h1> Total cart value: <span class="totalCartValue">${this.cartValue}</span></h1>
+        ${displayItemSummary(A)}
         ${displayItemSummary(B)}
         ${displayItemSummary(C)}
         ${displayItemSummary(D)}`;
