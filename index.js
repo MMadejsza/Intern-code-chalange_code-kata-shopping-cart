@@ -10,3 +10,6 @@ const A = new Product('A', 50, 3, 130);
 const B = new Product('B', 30, 2, 37);
 const C = new Product('C', 20);
 const D = new Product('D', 10);
+
+const inputString = document.querySelector('input');
+inputString.addEventListener('input', userCart.addItem.bind(userCart));
