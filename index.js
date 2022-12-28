@@ -26,10 +26,18 @@ class UserCart {
 		div.innerHTML = `<h1> Total cart value: <span class="totalCartValue">${
 			this.cartValue
 		}</span></h1>
-        <h2>${A.amount == undefined ? `` : `Item A ${A.amount} x ${A.price}`}</h2>
-        <h2>${B.amount == undefined ? `` : `Item B ${B.amount} x ${B.price}`}</h2>
-        <h2>${C.amount == undefined ? `` : `Item C ${C.amount} x ${C.price}`}</h2>
-        <h2>${D.amount == undefined ? `` : `Item D ${D.amount} x ${D.price}`}</h2>`;
+        <h2>${A.amount == undefined ? `` : `Item A: ${A.amount} x ${A.price} = `}${
+			A.amount == undefined ? `` : `${A.totalValue}`
+		}${A.amount >= A.discountAmount ? ' Discounted' : ''}</h2>
+        <h2>${B.amount == undefined ? `` : `Item B: ${B.amount} x ${B.price} = `}${
+			B.amount == undefined ? `` : `${B.totalValue}`
+		}${B.amount >= B.discountAmount ? ' Discounted' : ''}</h2>
+        <h2>${
+			C.amount == undefined ? `` : `Item C: ${C.amount} x ${C.price} = ${C.totalValue}`
+		}</h2>
+        <h2>${
+			D.amount == undefined ? `` : `Item D: ${D.amount} x ${D.price} = ${D.totalValue}`
+		}</h2>`;
 		container.appendChild(div);
 	}
 
