@@ -17,6 +17,17 @@ class UserCart {
 		this.cartValue;
 	}
 
+	calculateTotalCartValue() {
+		this.cartValue = 0;
+		this.calculateValuesOfEachItem().forEach((itemsValue) => {
+			this.cartValue += itemsValue;
+		}, this);
+		console.log(
+			'🚀 ~ file: index.js:22 ~ UserCart ~ calculateTotalCartValue ~ this.cartValue ',
+			this.cartValue,
+		);
+	}
+
 	calculateValuesOfEachItem() {
 		const itemsValues = this.cartContent.map((item) => {
 			if (!item.discountAmount) {
@@ -82,7 +93,7 @@ class UserCart {
 					break;
 			}
 		}
-		this.calculateValuesOfEachItem();
+		this.calculateTotalCartValue();
 	}
 }
 
