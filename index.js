@@ -23,11 +23,13 @@ class UserCart {
 		container.innerHTML = '';
 		const div = document.createElement('div');
 		div.setAttribute('class', 'cart');
-		div.innerHTML = `<h1> Total cart value: ${this.cartValue}</h1>
-        <h2>Item A ${A.amount} x ${this.cartValue[0]}</h2>
-        <h2>Item B ${B.amount} x ${this.cartValue[1]}</h2>
-        <h2>Item C ${C.amount} x ${this.cartValue[2]}</h2>
-        <h2>Item D ${D.amount} x ${this.cartValue[3]}</h2>`;
+		div.innerHTML = `<h1> Total cart value: <span class="totalCartValue">${
+			this.cartValue
+		}</span></h1>
+        <h2>${A.amount == undefined ? `` : `Item A ${A.amount} x ${A.price}`}</h2>
+        <h2>${B.amount == undefined ? `` : `Item B ${B.amount} x ${B.price}`}</h2>
+        <h2>${C.amount == undefined ? `` : `Item C ${C.amount} x ${C.price}`}</h2>
+        <h2>${D.amount == undefined ? `` : `Item D ${D.amount} x ${D.price}`}</h2>`;
 		container.appendChild(div);
 	}
 
@@ -47,18 +49,21 @@ class UserCart {
 		const itemsValues = this.cartContent.map((item) => {
 			if (!item.discountAmount) {
 				//- if the item is NOT discounted
-				return item.price * item.amount;
+				item.totalValue = item.price * item.amount;
+				return item.totalValue;
 			} else {
 				//- if the item is discounted
 				if (item.amount / item.discountAmount >= 1) {
 					//- if reminder is greater/equal to 1 (if there is more then "promotional amount of items")
-					return (
+					item.totalValue =
 						item.discountedPrice * Math.floor(item.amount / item.discountAmount) +
-						(item.amount % item.discountAmount) * item.price
-					);
+						(item.amount % item.discountAmount) * item.price;
+
+					return item.totalValue;
 				} else {
 					//- if less then bundle offer
-					return item.price * item.amount;
+					item.totalValue = item.price * item.amount;
+					return item.totalValue;
 				}
 			}
 		});
