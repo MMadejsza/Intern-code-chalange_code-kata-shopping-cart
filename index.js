@@ -18,26 +18,25 @@ class UserCart {
 	}
 
 	renderOutcome() {
+		function displayItemSummary(item) {
+			return `<h2>${
+				item.amount == undefined
+					? ``
+					: `Item ${item.name}: ${item.amount} x ${item.price} = `
+			}${item.amount == undefined ? `` : `${item.totalValue}`}${
+				item.discountAmount != 0 && item.amount >= item.discountAmount ? ' Discounted' : ''
+			}</h2>`;
+		}
 		console.log(this.cartValue);
 		const container = document.querySelector('.cartContainer');
 		container.innerHTML = '';
 		const div = document.createElement('div');
 		div.setAttribute('class', 'cart');
-		div.innerHTML = `<h1> Total cart value: <span class="totalCartValue">${
-			this.cartValue
-		}</span></h1>
-        <h2>${A.amount == undefined ? `` : `Item A: ${A.amount} x ${A.price} = `}${
-			A.amount == undefined ? `` : `${A.totalValue}`
-		}${A.amount >= A.discountAmount ? ' Discounted' : ''}</h2>
-        <h2>${B.amount == undefined ? `` : `Item B: ${B.amount} x ${B.price} = `}${
-			B.amount == undefined ? `` : `${B.totalValue}`
-		}${B.amount >= B.discountAmount ? ' Discounted' : ''}</h2>
-        <h2>${
-			C.amount == undefined ? `` : `Item C: ${C.amount} x ${C.price} = ${C.totalValue}`
-		}</h2>
-        <h2>${
-			D.amount == undefined ? `` : `Item D: ${D.amount} x ${D.price} = ${D.totalValue}`
-		}</h2>`;
+		div.innerHTML = `<h1> Total cart value: <span class="totalCartValue">${this.cartValue}</span></h1>`;
+		div.innerHTML = `${displayItemSummary(A)}
+        ${displayItemSummary(B)}
+        ${displayItemSummary(C)}
+        ${displayItemSummary(D)}`;
 		container.appendChild(div);
 	}
 
