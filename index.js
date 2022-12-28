@@ -19,6 +19,16 @@ class UserCart {
 
 	renderOutcome() {
 		console.log(this.cartValue);
+		const container = document.querySelector('.cartContainer');
+		container.innerHTML = '';
+		const div = document.createElement('div');
+		div.setAttribute('class', 'cart');
+		div.innerHTML = `<h1> Total cart value: ${this.cartValue}</h1>
+        <h2>Item A ${A.amount} x ${this.cartValue[0]}</h2>
+        <h2>Item B ${B.amount} x ${this.cartValue[1]}</h2>
+        <h2>Item C ${C.amount} x ${this.cartValue[2]}</h2>
+        <h2>Item D ${D.amount} x ${this.cartValue[3]}</h2>`;
+		container.appendChild(div);
 	}
 
 	calculateTotalCartValue() {
